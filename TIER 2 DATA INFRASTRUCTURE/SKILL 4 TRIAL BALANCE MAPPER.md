@@ -1,60 +1,59 @@
 ---
-name: exl-cloud-period-table-builder
-description: "Build the tbl_Period date structure for time-series workbooks. Use when the user says 'build tbl_Period', 'set up periods', 'create date table', 'build time series', 'set up the date axis', 'period table', 'ACT FCST toggle', 'financial year dates', 'monthly periods', or invokes /period-table-builder. Builds a structured Excel table with period start dates, end dates, days in period, period counters, financial year, and ACT/FCST flags. Independent of Clean Data and TB Mapper. Do NOT use for calendar scheduling, project timelines, or non-financial date structures."
+name: exl-cloud-trial-balance-mapper
+description: "Map trial balance accounts to standardised reporting categories. Use when the user says ‘map my TB’, ‘map trial balance’, ‘categorise accounts’, ‘set up account mapping’, ‘map Xero TB’, ‘map MYOB accounts’, ‘standardise my chart of accounts’, ‘COA mapping’, ‘map accounts to P&L and BS’, or invokes /trial-balance-mapper. Builds an Account Mapping sheet with pipe-delimited many-to-one mappings from granular source accounts to standardised P&L and BS categories. Depends on clean data (§1). Do NOT use for TB reconciliation between two TBs, model building, or journal posting."
 ---
 
-# Period Table Builder
+# Trial Balance Mapper
 
-The period table (tbl_Period) is the backbone of every EXL Cloud time-series workbook. It defines the date columns that all calculation engines, reports, and dashboards reference. Getting this right means every downstream formula inherits correct dates, financial years, and ACT/FCST classifications automatically.
+This skill bridges the gap between a client’s raw chart of accounts and a standardised reporting structure. Every accounting system uses different account codes and naming conventions — this skill normalises them into a consistent framework that reports, models, and dashboards can consume.
 
 ## 1. When to Use
 
-- Setting up a new EXL Cloud workbook (report, model, or dashboard)
-- Extending an existing workbook’s time horizon (adding future periods)
-- Changing the financial year end month
-- Switching between monthly, quarterly, or annual periodicity
+- you have a raw Trial Balance extract from Any accounting system
+- Account names and codes need mapping to standardised P&L and BS categories
+- Building an EXL Cloud report or model that requires mapped data as input
+- Client has changed their chart of accounts and mappings need updating
 
-## 2. Required Inputs
+## 2. Prerequisites
 
-- Start Date: first period start (e.g. 1 July 2023)
-- Number of Periods: how many periods to generate (e.g. 36 months)
-- Periodicity: Monthly (default), Quarterly, or Annual
-- Financial Year End Month: month number (e.g. 6 for June, 12 for December)
-- ACT/FCST Cutoff Date: the date separating actual from forecast periods
+- Run §1 Clean & Validate Data first to ensure the source TB is clean
+- Source TB must have at minimum: Account Code, Account Name, and Balance columns
+- Know the target reporting structure (EXL Cloud standard categories or client-specific)
 
-## 3. Table Structure
+## 3. Workflow
 
-tbl_Period contains one row per period with these columns:
-- Period_Start: first day of the period (EOMONTH-based)
-- Period_End: last day of the period
-- Days_in_Period: count of days (for daily proration calculations)
-- Period_Counter: sequential integer (1, 2, 3...) for OFFSET-based lookups
-- Month_Num: calendar month number (1–12)
-- Year: calendar year
-- FY: financial year (adjusted for FY end month)
-- FY_Period: period number within the financial year (1–12 for monthly)
-- ACT_FCST: ACT for actual periods, FCST for forecast periods
-- Display_Label: formatted label for headers (e.g. Jan 24, Q1 FY24)
+### Step 1: Read the Source TB
+- Identify the TB sheet and locate Account Code, Account Name, and Balance columns
+- Extract unique account codes and names
+- Classify each account as P&L or BS based on account type (Revenue, Expense, Asset, Liability, Equity)
 
-## 4. Key Formulas
+### Step 2: Build the Account Mapping Sheet
+- Create a new ‘Account Mapping’ sheet
+- Columns: Source Code, Source Name, Account Type, Mapped Category, Sub-Category
+- use pipe-delimited format for many-to-one mappings (multiple Source accounts to one category)
+- Pre-populate mappings using intelligent matching (keyword detection on Account names)
+- Flag any accounts that could not be auto-mapped for user review
 
-- Period_Start: use EOMONTH(Start_Date, Period_Counter - 2) + 1
-- Period_End: use EOMONTH(Period_Start, 1) - 1 for monthly
-- Days_in_Period: use Period_End - Period_Start + 1
-- FY: use YEAR + IF logic to adjust for FY end month
-- ACT_FCST: compare Period_End to ACT_FCST_Cutoff date
+### Step 3: Standard Category Structure
+P&L Categories: Sales Revenue, Cost of Goods Sold, Other Revenue, Salaries & Wages, Operating Expenses, Depreciation & Amortisation, Interest, Tax
+BS Categories: Cash, Debtors, Inventory, Prepayments, Fixed Assets, Intangibles, Creditors, Accrued Expenses, Current Debt, Non-Current Debt, Share Capital, Retained Earnings
 
-## 5. Gotchas
+### Step 4: Validation
+- Every Source Account must Be mapped (no orphans)
+- TB total must equal sum of all mapped categories
+- P&L accounts must not map to BS categories and vice versa
+- Produce a Mapping summary with Account counts per category
 
-- Always use EOMONTH for date arithmetic — never add 30 or 31 days. February and month-end boundaries will break.
-- The FY calculation must use the Period_Start month, not Period_End — a period starting in June belongs to the FY ending June, not the next FY.
-- ACT/FCST flag must compare Period_End (not Period_Start) to the cutoff date — a partially-complete period is still ACT until its end date passes.
-- Quarterly periodicity must align to the FY end month (e.g. FY ending June means Q1 is Jul-Sep, not Jan-Mar).
-- Display_Label format must match the existing workbook convention. Check the first sheet header before generating.
+## 4. Gotchas
 
-## 6. Constraints
+- Xero account types use long-form names (‘Current Liability account’ not ‘Current Liability’) — match against the full string or lookups will fail.
+- Some clients use the same account name for different entities with different codes — always map by Code + Name, never Name alone.
+- Bank accounts may appear as both Asset (bank balance) and P&L (bank fees) — check the account type, not just the name.
+- Retained Earnings is often a single line in the TB but may need splitting into Opening RE + Current Year Earnings for the BS.
+- GST/VAT clearing accounts can be Asset or Liability depending on the balance — map to a dedicated ‘Tax’ BS category.
 
-- Table must be named tbl_Period (exact casing) for structured references to work
-- Do NOT hardcode dates — all dates derived from Start_Date and EOMONTH
-- Do NOT mix periodicities in a single table (no monthly + quarterly in one tbl_Period)
-- ACT/FCST cutoff must reference a named range or Master Control cell, not a hardcoded date
+## 5. Constraints
+
+- Do NOT modify the source TB data — mapping is a separate sheet that references the source
+- Do NOT assume the chart of accounts structure — read it from the data
+- Do NOT create mappings that are not verifiable against the source TB totals
