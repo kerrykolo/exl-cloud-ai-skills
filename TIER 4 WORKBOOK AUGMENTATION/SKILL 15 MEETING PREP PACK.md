@@ -1,11 +1,13 @@
 ---
 name: exl-cloud-meeting-prep-pack
-description: "Generate meeting preparation pack from workbook data. Use when the user says 'prep for the board meeting', 'meeting prep', 'prepare talking points', 'board meeting brief', 'committee prep', 'what should I present', 'meeting pack', or invokes /meeting-prep-pack. Pulls data from multiple skills to create a concise brief. Do NOT use for full board paper (use §5), commentary (use §4), or model building."
+description: "Generate meeting preparation pack from workbook data. Use when the user says 'prep for the board meeting', 'meeting prep', 'prepare talking points', 'board meeting brief', 'committee prep', 'what should I present', 'meeting pack', or invokes /meeting-prep-pack. Pulls data from multiple skills to create a concise brief. Do NOT use for full board paper, commentary, or model building."
 ---
 
 # Meeting Prep Pack
 
 Walking into a board or committee meeting without preparation is a career risk. This skill generates a structured brief that pulls key numbers, talking points, risk items, and decision requests from the workbook so the presenter is fully prepared.
+
+**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
 
 ## 1. When to Use
 

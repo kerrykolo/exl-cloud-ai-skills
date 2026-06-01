@@ -1,11 +1,13 @@
 ---
 name: exl-cloud-cash-flow-narrative
-description: "Generate cash flow narrative from financial data. Use when the user says 'explain cash flow', 'cash flow commentary', 'cash narrative', 'what happened to cash', 'cash position summary', 'explain the cash movements', 'why did cash change', or invokes /cash-flow-narrative. Reads CFS data and produces structured paragraphs covering operating, investing, and financing cash flows. Feeds Board Paper. Do NOT use for P&L commentary (use §4), board paper assembly (use §5), or cash flow model building."
+description: "Generate cash flow narrative from financial data. Use when the user says 'explain cash flow', 'cash flow commentary', 'cash narrative', 'what happened to cash', 'cash position summary', 'explain the cash movements', 'why did cash change', or invokes /cash-flow-narrative. Reads CFS data and produces structured paragraphs covering operating, investing, and financing cash flows. Feeds Board Paper. Do NOT use for P&L commentary, board paper assembly, or cash flow model building."
 ---
 
 # Cash Flow Narrative
 
 This skill reads cash flow data from the workbook and produces structured, plain-English narrative explaining where cash came from, where it went, and what the net position means.
+
+**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
 
 ## 1. When to Use
 

@@ -1,11 +1,13 @@
 ---
 name: exl-cloud-trial-balance-mapper
-description: "Map trial balance accounts to standardised reporting categories. Use when the user says ‘map my TB’, ‘map trial balance’, ‘categorise accounts’, ‘set up account mapping’, ‘map Xero TB’, ‘map MYOB accounts’, ‘standardise my chart of accounts’, ‘COA mapping’, ‘map accounts to P&L and BS’, or invokes /trial-balance-mapper. Builds an Account Mapping sheet with pipe-delimited many-to-one mappings from granular source accounts to standardised P&L and BS categories. Depends on clean data (§1). Do NOT use for TB reconciliation between two TBs, model building, or journal posting."
+description: "Map trial balance accounts to standardised reporting categories. Use when the user says ‘map my TB’, ‘map trial balance’, ‘categorise accounts’, ‘set up account mapping’, ‘map Xero TB’, ‘map MYOB accounts’, ‘standardise my chart of accounts’, ‘COA mapping’, ‘map accounts to P&L and BS’, or invokes /trial-balance-mapper. Builds an Account Mapping sheet with pipe-delimited many-to-one mappings from granular source accounts to standardised P&L and BS categories. Depends on clean data (Clean & Validate Data). Do NOT use for TB reconciliation between two TBs, model building, or journal posting."
 ---
 
 # Trial Balance Mapper
 
 This skill bridges the gap between a client’s raw chart of accounts and a standardised reporting structure. Every accounting system uses different account codes and naming conventions — this skill normalises them into a consistent framework that reports, models, and dashboards can consume.
+
+**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
 
 ## 1. When to Use
 
@@ -16,7 +18,7 @@ This skill bridges the gap between a client’s raw chart of accounts and a stan
 
 ## 2. Prerequisites
 
-- Run §1 Clean & Validate Data first to ensure the source TB is clean
+- Run Clean & Validate Data (exl-cloud-clean-validate-data) first to ensure the source TB is clean
 - Source TB must have at minimum: Account Code, Account Name, and Balance columns
 - Know the target reporting structure (EXL Cloud standard categories or client-specific)
 

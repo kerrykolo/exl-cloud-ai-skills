@@ -1,11 +1,13 @@
 ---
 name: exl-cloud-kpi-dashboard-formatter
-description: "Build a KPI dashboard with tiles and traffic lights. Use when the user says 'build a dashboard', 'KPI tiles', 'executive dashboard', 'one-page summary', 'traffic light dashboard', 'key metrics view', 'management dashboard', or invokes /kpi-dashboard-formatter. Creates a formatted dashboard sheet. Feeds Board Paper. Do NOT use for variance analysis (use §10), commentary (use §4), or chart building."
+description: "Build a KPI dashboard with tiles and traffic lights. Use when the user says 'build a dashboard', 'KPI tiles', 'executive dashboard', 'one-page summary', 'traffic light dashboard', 'key metrics view', 'management dashboard', or invokes /kpi-dashboard-formatter. Creates a formatted dashboard sheet. Feeds Board Paper. Do NOT use for variance analysis , commentary , or chart building."
 ---
 
 # KPI Dashboard Formatter
 
 This skill builds a one-page executive dashboard that presents key performance indicators as visual tiles. Each tile shows the metric name, current value, trend direction, comparison to target, and a traffic light status. Designed for printing or screen sharing in management meetings.
+
+**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
 
 ## 1. When to Use
 

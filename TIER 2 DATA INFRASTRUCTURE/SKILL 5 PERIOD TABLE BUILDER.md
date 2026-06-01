@@ -7,6 +7,8 @@ description: "Build the tbl_Period date structure for time-series workbooks. Use
 
 The period table (tbl_Period) is the backbone of every EXL Cloud time-series workbook. It defines the date columns that all calculation engines, reports, and dashboards reference. Getting this right means every downstream formula inherits correct dates, financial years, and ACT/FCST classifications automatically.
 
+**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+
 ## 1. When to Use
 
 - Setting up a new EXL Cloud workbook (report, model, or dashboard)

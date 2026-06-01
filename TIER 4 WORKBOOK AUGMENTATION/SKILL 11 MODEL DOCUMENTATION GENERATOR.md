@@ -7,6 +7,8 @@ description: "Generate model documentation and Instructions sheet. Use when the 
 
 Good models are self-documenting. This skill generates a comprehensive Instructions sheet that any new user can read to understand the workbook’s purpose, structure, inputs, outputs, and operating procedures. Without documentation, models become black boxes that only the original builder can use.
 
+**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+
 ## 1. When to Use
 
 - Completing a new model build (documentation is the final step)

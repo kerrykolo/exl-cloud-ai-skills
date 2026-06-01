@@ -7,6 +7,8 @@ description: "Assemble a board paper from financial data and commentary inputs. 
 
 This skill assembles a complete, board-ready management report by consuming outputs from sibling skills. It does not generate raw analysis — it structures and presents the work already done by the Commentary Generator, Cash Flow Narrative, Variance Reporter, and KPI Dashboard into a coherent document.
 
+**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+
 ## 1. When to Use
 
 - Preparing monthly or quarterly board packs
@@ -17,10 +19,10 @@ This skill assembles a complete, board-ready management report by consuming outp
 ## 2. Dependencies
 
 This skill consumes outputs from:
-- §4 Monthly Commentary Generator → variance section narrative
-- §6 Cash Flow Narrative → cash position section
-- §10 Variance Analysis Reporter → financial highlights data
-- §11 KPI Dashboard Formatter → executive summary KPI tiles
+- Monthly Commentary Generator(exl-cloud-monthly-commentary-generator) → variance section narrative
+- Cash Flow Narrative(exl-cloud-cash-flow-narrative) → cash position section
+- Variance Analysis Reporter(exl-cloud-variance-analysis-reporter) → financial highlights data
+- KPI Dashboard Formatter(exl-cloud-kpi-dashboard-formatter) → executive summary KPI tiles
 
 ## 3. Document Structure
 

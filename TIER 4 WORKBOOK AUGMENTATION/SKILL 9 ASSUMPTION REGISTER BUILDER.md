@@ -7,6 +7,8 @@ description: "Extract assumptions from a workbook into a structured register. Us
 
 Every financial model contains assumptions — growth rates, margins, tax rates, discount rates, timing parameters. This skill finds them all and organises them into a single, auditable register. Without this, assumptions are scattered across sheets, buried in formulas, and impossible to scenario-test.
 
+**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+
 ## 1. When to Use
 
 - Inheriting a model built by someone else

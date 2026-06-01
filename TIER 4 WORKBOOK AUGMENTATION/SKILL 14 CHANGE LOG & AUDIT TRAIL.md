@@ -7,6 +7,8 @@ description: "Add Change Log and Claude Log sheets. Use when the user says 'add 
 
 Model governance requires knowing who changed what, when, and why. This skill adds two tracking sheets: a Change Log for human-readable version history, and a Claude Log for AI-specific audit trails. Together they provide complete traceability for model reviews, audits, and handovers.
 
+**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+
 ## 1. When to Use
 
 - Starting any new model build (add early, update continuously)

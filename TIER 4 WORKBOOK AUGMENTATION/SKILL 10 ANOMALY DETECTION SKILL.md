@@ -7,6 +7,8 @@ description: "Add a Validation Checks sheet to any workbook. Use when the user s
 
 This skill adds a dedicated Validation Checks sheet to any workbook. The sheet contains automated checks that flag errors, imbalances, and data quality issues.
 
+**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+
 ## 1. When to Use
 
 - Building a new financial model or report

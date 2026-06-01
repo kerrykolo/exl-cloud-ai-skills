@@ -1,11 +1,13 @@
 ---
 name: exl-cloud-monthly-commentary-generator
-description: "Generate monthly management commentary from financial data. Use when the user says 'write commentary', 'monthly commentary', 'explain the P&L', 'management narrative', 'write up the month', 'commentary for the board', 'explain the variances', 'financial narrative', or invokes /monthly-commentary-generator. Reads P&L actual vs budget, identifies key drivers, and produces structured paragraphs. Feeds Board Paper Drafter. Do NOT use for cash flow narrative (use §6), board paper assembly (use §5), or data cleanup."
+description: "Generate monthly management commentary from financial data. Use when the user says 'write commentary', 'monthly commentary', 'explain the P&L', 'management narrative', 'write up the month', 'commentary for the board', 'explain the variances', 'financial narrative', or invokes /monthly-commentary-generator. Reads P&L actual vs budget, identifies key drivers, and produces structured paragraphs. Feeds Board Paper Drafter."
 ---
 
 # Monthly Commentary Generator
 
 This skill transforms raw financial data into professional management commentary. It reads actual results alongside budget or prior period comparatives, identifies the key drivers of variance, and produces structured narrative paragraphs ready for management packs or board papers.
+
+**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
 
 ## 1. When to Use
 

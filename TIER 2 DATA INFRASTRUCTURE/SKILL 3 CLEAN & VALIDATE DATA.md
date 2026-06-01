@@ -7,11 +7,13 @@ description: "Clean and validate spreadsheet data before downstream use. Use whe
 
 This skill automates the tedious but critical first step of any data workflow: ensuring the source data is clean, consistent, and ready for downstream consumption. Dirty data is the number one cause of broken lookups, failed pivot tables, and incorrect model outputs.
 
+**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+
 ## 1. When to Use
 
 Run this skill BEFORE any of the following:
-- Mapping a Trial Balance (§2 Trial Balance Mapper)
-- Building a Period Table (§3 Period Table Builder)
+- Mapping a Trial Balance (exl-cloud-trial-balance-mapper)
+- Building a Period Table (exl-cloud-period-table-builder)
 - Creating pivot tables, charts, or dashboards from raw data
 - Importing data from external sources (CSV, Xero, MYOB, bank feeds)
 - Any time you see #VALUE!, #N/A, or unexpected blanks in downstream formulas

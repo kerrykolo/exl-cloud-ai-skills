@@ -1,197 +1,142 @@
 ---
-name: exl-cloud-best-practice-modelling
-description: "Best practice financial modelling standards for the EXL Cloud platform. Use when the user says 'format my model', 'colour code my inputs', 'apply modelling best practice', 'fix my number formats', 'check my formula discipline', 'audit model structure', 'apply EXL Cloud standards', 'blue inputs black formulas', 'financial model formatting', 'build a validation sheet', or invokes /exl-cloud-best-practice-modelling. Covers colour coding, number formats, font standards, formula rules, tab structure, validation checks, and output statement layouts. Do NOT use for building calculation engines or proprietary modelling logic."
+name: exl-cloud-foundations
+description: "Foundational quality standards for building, reviewing, and improving SKILL.md files and Excel financial models. Use when the user says 'check my skill', 'audit this skill', 'quality check', 'review my model for hardcodes', 'are my assumptions separated', 'skill audit', 'check my formulas', 'best practice check', 'foundations check', or invokes /exl-cloud-foundations. Covers skill structure, description writing, the 5 skill killers, quality checklist, formula discipline, and validation standards. Do NOT use for building financial models (use exl-cloud-best-practice-modelling) or data cleanup."
 ---
 
-# EXL Cloud Best Practice Financial Modelling Standards
+# EXL Cloud Foundations
 
-These standards define the formatting, structure, and convention rules for financial models built in the EXL Cloud platform. Follow these when building, modifying, or auditing any Excel model to ensure professional, consistent, auditable output.
+These standards define the quality bar for every SKILL.md file you build and every Excel model you audit. Adopting a standard (even an imperfect one) beats having none. Skills built without standards are the equivalent of rogue spreadsheets — they work for the author, break for everyone else, and accumulate hidden errors over time.
 
-## 1. Colour Coding Standards
+## 1. Skill Types — Know What You're Building
 
-Every cell must be coloured according to its function. This is non-negotiable.
+Before writing a skill, classify it on two axes:
 
-### Cell Legend
-- Blue text (hex 0070C0) on light green bg (hex E2E9DA): Input — assumption input cells users will change
-- Blue text (hex 0070C0) on medium green bg (hex ABBB93): Input with calc — linked cells (e.g. from Scenario Manager)
-- Blue text (hex 0070C0) on no fill: Blank input — input cell with no current impact
-- Black text, no special fill: Output — calculated values and workings
-- Dark green bg (hex 375623), white bold text: Section headers
+### Maintenance Posture
+- **Capability Uplift**: Enables functions the model can't do well on its own. May become obsolete as models improve. Build for high-impact gaps only.
+- **Encoded Preference**: Sequences existing capabilities according to YOUR workflow. Gets more valuable over time. Invest most time here.
 
-### Colour Palette (Wisp Theme)
-- Dark green (primary brand): hex 375623 — section headers, dark header backgrounds
-- Medium green: hex ABBB93 — secondary headers, alternating row fills
-- Light green: hex E2E9DA — Light background fills, input area highlights
-- Blue (inputs): hex 0070C0 — all hardcoded input cells and assumption values
-- Red (alerts/links): hex FF0000 — external links, error flags, warning values
-- Black: ALL calculation/output cells
-- White: header text on dark backgrounds
+### Functional Category
+- **Style / convention enforcement**: Encodes a formatting or layout standard (e.g. financial model colour coding)
+- **Workflow automation**: Multi-step procedures with a defined start, end, and success state
+- **Investigation / triage**: Takes a symptom and produces a structured diagnostic report
+- **Operational procedure**: Routine maintenance, refresh, or rollover tasks
+- **Reference / domain knowledge**: Pure context the model applies inline (no procedural steps)
 
-## 2. Font Standards
+If a skill spans more than two categories, that's a scoping smell — split it.
 
-- Primary font: Arial, 9pt for all body content
-- Display font: Century Gothic, 9-11pt (sparingly, for titles and branding only)
-- VBA/button font: Tahoma, 9pt bold
+## 2. Scoping — One Skill, One Job
 
-## 3. Number Format Standards
+Before writing, apply the scoping test:
+- Can you describe what it does in one sentence? → one skill.
+- does it have two distinct triggers? → Probably two skills.
+- Would two different people use different halves? → two skills.
+- Is the SKILL.md approaching 500 lines? → Split it.
 
-Apply these formats consistently across all models:
+## 3. File Structure
 
-- Currency (whole): use custom format with thousands separator, parentheses for negatives, dash for zeros
-- Dollar sign: prefix with $ symbol using custom format
-- Percentage (1dp): 0.0% format
-- Multiples: display with 'x' suffix (e.g. 9.0x) using custom format
-- Dates (headers): mmm yy — displays: Jan 23
-- Dates (full): d mmmm yyyy — displays: 1 January 2023
-- Zeros: Always display as "-" using custom format (including for percentages)
-- Negative numbers: Use parentheses (1,234) not minus sign -1,234
-- Sign convention: Revenue positive, Expenses negative (natural sign)
+Every SKILL.md follows three parts in this exact order:
+1. **YAML Frontmatter** (Required) — name + description between --- markers
+2. **Opening Context** (Required) — 1-3 sentences framing what this skill enables
+3. **Body Instructions** (Required) — structured sections covering workflows, rules, examples, guardrails
 
-## 4. Tab Structure & Naming
+## 4. Description Field Standards
 
-Tabs follow a strict numbered hierarchy. Every tab begins with a section number and descriptive name:
+The description is the gatekeeper. It determines whether the skill fires at all. Write it as a trigger, not a summary.
 
-- Instructions: User guide, cell legends, step-by-step instructions
-- Master Control: Central parameters, date settings, entity selection
-- 1.x: Outputs & Dashboards — Executive Summary, Scenario Dashboard, Annual Financials, Management Report
-- 2.x: Data Input & Processing — Date setup, raw data, processed data
-- 3.x: Mapping & Checks — COA mapping, mapped outputs, value checks, logic selectors
-- 4.x-12.x: Calculation Engines — Revenue, COGS, Expenses, Salaries, Working Capital, Assets, Capital, Tax, Other Items
-- 13: Output — Consolidated monthly 3-way financial statements (IS, BS, CFS)
-- 14-17: Dashboard Data Feeds — Monthly, annual, scenario, combo data for dashboards
-- 18: Chart of Accounts — Master COA for P&L and Balance Sheet
-- 19: Helper — Lookups, named ranges, dropdown lists, parameters
-- 20: Validation Checks — All model error and integrity checks
-- Change Log: Audit trail of all changes made to the workbook
+### What a Good Description Contains
+1. Trigger phrases first — start with "Use when the user says..." and list exact phrases
+2. What the skill does — one clear sentence
+3. Boundary conditions — what this skill is NOT for
 
-## 5. Time Series Layout
+### Writing Rules
+- Be LOUD — Claude undertriggers by default. List more trigger conditions rather than fewer.
+- Write in third person — "This skill prepares..." not "I can help you..."
+- Lead with triggers, not function — "Use when..." before the what-it-does sentence.
+- Include synonyms and alternate phrasings people actually say.
+- End with a clear "Do NOT use for..." boundary.
+- Stay under 1024 characters (hard platform ceiling — skill won't save otherwise). Aim for under 950 chars for safety margin.
 
-All calculation sheets with time series data follow this layout:
+## 5. The 5 Skill Killers
 
-- Columns A-G: Reserved for labels, categories, and helper columns
-- Column H onwards: Time series data (one column per period)
-- Row 1: Reserved (hidden helper row)
-- Rows 2-8: Sheet header block (model name, sheet title, brand, active scenario, error messages)
-- Rows 9-18: Time series header block (start dates, end dates, days in period, counters, year, FY, ACT/FCST flag)
-- Row 18: Forecast Flag — marks each column as ACT (actual/historical) or FCST (forecast)
-- Data rows: Begin at row 19 or below, depending on the sheet
+Check every skill against these failure modes:
 
-## 6. Workings and Calculation Rules
+1. **Description doesn't trigger** — Skill never fires or fires wrong. Fix: Loud, specific, third-person. Lead with "Use when..."
+2. **Over-defining the process** — Output is rigid, generic. Fix: Match degrees of freedom to task fragility.
+3. **Stating the obvious** — Bloated skill, wasted tokens. Fix: Challenge every paragraph — "Does Claude need this?"
+4. **Missing gotcha section** — Same failures repeat. Fix: Document every failure pattern from day 1.
+5. **Monolithic blob** — Slow to load, hard to maintain. Fix: SKILL.md under 500 lines. Reference files for the rest.
 
-These rules ensure every model is auditable and trustworthy:
+## 6. Essential Sections
 
-- never hardcode values in calculation cells — ALL assumptions must live in dedicated input cells coloured Blue
-- All input cells must be clearly visible: blue text on light green or medium green background
-- Assumptions must NOT be comingled within workings — keep them in a separate, clearly labelled section
-- Use IFERROR() and IFNA() wrapping for all lookup-based workings
-- Use IF(denominator=0, 0, numerator/denominator) to prevent DIV/0 errors
-- Cross-sheet references must use sheet name in single quotes: 'Sheet Name'!CellRef
-- Use structured table references where tables exist: tbl_Period[Column], not fixed A1 ranges
-- Circular references are not permitted — use iterative workarounds if needed
-- Keep workings simple and auditable — prefer helper rows over deeply nested expressions
-- Avoid volatile or complex functions (e.g. those that build references from text strings) unless specifically required
-- Break complex logic into intermediate steps so each step is traceable
-- Use EOMONTH for all date calculations — never add or subtract fixed day counts
+Every skill should contain:
+- **Context Required** — What files/inputs to read before running
+- **Steps** — The numbered workflow
+- **Output** — Literal template or example of expected output (show, don't describe)
+- **Gotcha Section** — Where the model goes wrong — the highest-signal content in any skill
+- **Constraints** — What NOT to do, specific to this skill
 
-## 7. Hardcoded Values — What's Allowed vs Prohibited
+## 7. Guardrails
 
-### Prohibited (will fail an audit)
-- Business assumptions embedded directly in workings (tax rates, growth rates, margins as magic numbers)
-- Computed values typed directly into cells instead of being derived by a calculation
-- Data from another sheet copy-pasted as values instead of linked with a cell reference
-- Overwriting a live calculation cell with a hardcoded value to force a specific output
+- **Separation of Concerns** — Separate setup → core workflow → output/validation. Mixing creates confusion.
+- **No Hidden Logic** — Every rule and assumption must be visible in the skill or clearly referenced.
+- **Consistent Patterns** — Use the same patterns throughout. Inconsistency forces Claude to guess.
+- **Decomposition** — If a step has more than 3 sub-decisions, break it into subsections.
+- **Error Prevention Over Detection** — Design instructions that prevent errors before providing ones that detect them.
 
-### Allowed (no issue)
-- Designated input/assumption cells clearly labelled and coloured blue
-- True constants: multiply by 12 (months per year), divide by 100 (percentage conversion)
-- Initial seed values (first value in a series where no prior cell exists)
-- Small lookup tables in a clearly labelled reference range
+## 8. The Gotcha Section — Highest-Signal Content
 
-## 8. Validation Checks System
+The gotcha section is the most valuable part of any skill. It captures failure patterns.
+- Start from day 1 and keep adding after every use.
+- Document every failure: "I know you'll want to do X — don't. Here's why."
+- Each gotcha must be specific to THIS skill, not generic AI behaviour.
+- "Be accurate" is useless. "Don't conflate opinion pieces with primary data" is actionable.
+- After each run, ask Claude: "What was missing or misleading? Propose a gotcha entry."
 
-Every model must include a Validation Checks sheet with a comprehensive error-checking engine:
+## 9. Anti-Patterns to Avoid
 
-- Total error count displayed prominently
-- Error message string displayed on every sheet header (so users see issues immediately)
-- Individual checks returning PASS (0) or FAIL (1)
+- Wall of ALL-CAPS — less effective than reasoning. use consequence alongside the rule instead.
+- Vague description — never triggers. Be LOUD, specific, third-person.
+- Monolithic blob — model loses focus. Decompose into SKILL.md + references.
+- Duplicated logic — definitions drift. Single source of truth.
+- No boundaries — fires when it shouldn't. Always include "Do NOT use for..."
+- Identity/role preamble — wasted tokens. State what your approach does differently instead.
+- No gotchas — failures repeat. Build from day 1.
+- Describing output in prose — model guesses format. Show a literal template instead.
 
-### Minimum Required Checks
-1. Time Series Date validation (is the chosen date in the future?)
-2. Historical data refresh status (has date been changed but data not refreshed?)
-3. Unmapped values in revenue, COGS, and expense categories
-4. Staff setup completeness (termination dates, role names unique, setup complete)
-5. Working Capital opening balance splits sum to 100%
-6. Working Capital profile percentage splits sum to 100%
-7. Balance Sheet balance check — Assets = Liabilities + Equity (every period)
-8. Cash Flow reconciliation — CFS closing cash = BS cash (every period)
-9. P&L pre vs post processing value check
-10. Monthly cash balance check (no unintended negative cash)
+## 10. Quality Checklist
 
-## 9. Output Statement Structure
+Run this checklist against every skill before deploying:
 
-The model's output tab (13. Output) produces three linked financial statements:
+### Structure
+- [ ] YAML frontmatter has name and description
+- [ ] Name is lowercase, hyphenated
+- [ ] Skill type classified (Capability Uplift or Encoded Preference)
+- [ ] Scoping test passed (one sentence, one job)
+- [ ] Opening context paragraph exists
+- [ ] Under 500 lines (or decomposed into references)
 
-### Income Statement (P&L)
-Sales Revenue (detail lines) > Total Sales Revenue
-Cost of Goods Sold (detail lines) > Total COGS
-Gross Margin / Gross Margin (%)
-Other Revenue (detail lines) > Total Other Revenue
-Salaries and Wages (base + payroll tax + leave) > Total S&W Expense
-Operating Expenses (Advertising, Insurance, Licenses, Marketing, OpEx, Prof Fees, Rent, SG&A, Travel, Utilities) > Total Expenses
-Other Expenses > Total Other Expenses
-EBITDA / EBITDA Margin (%)
-Depreciation / Amortisation > EBIT
-Interest Expense / Income > EBT
-Tax Expense > NPAT / NPAT Margin (%)
+### Description
+- [ ] Written as a trigger, not a summary
+- [ ] Leads with "Use when the user says..."
+- [ ] Written in third person
+- [ ] Boundary conditions included ("Do NOT use for...")
+- [ ] Under 1024 characters (hard platform ceiling)
+- [ ] Under 950 characters (safety margin for future additions)
 
-### Balance Sheet
-Current Assets: Cash, Debtors, Inventory, Prepayments, Other Current Assets
-Non-Current Assets: Fixed Assets (net of Acc Depn), Intangible Assets (net of Acc Amort), Other Non-Current Assets
-Total Assets
-Current Liabilities: Creditors, Accrued Expenses, Current Debt, Other Current Liabilities
-Non-Current Liabilities: Non-Current Debt, Other Non-Current Liabilities
-Total Liabilities
-Equity: Share Capital, Retained Earnings, Current Year Earnings
-Total Equity > Total Liabilities + Equity
-Balance Check (must = 0 every period)
+### Content
+- [ ] Imperative form ("Set the page size", not "You should set")
+- [ ] Rules explain "why" not just "what"
+- [ ] Setup / workflow / validation separated
+- [ ] No hidden logic — all assumptions explicit
+- [ ] Output shown as literal template (not described in prose)
 
-### Cash Flow Statement
-Operating Activities: NPAT + Depreciation + Amortisation + Working Capital movements
-Investing Activities: Asset purchases/disposals
-Financing Activities: Debt drawdowns/repayments + Equity injections + Dividends
-Net Cash Movement
-Opening Cash Balance > Closing Cash Balance
-Cash Balance Check (Closing Cash = BS Cash, must = 0)
+### Gotcha Section
+- [ ] Exists and is non-empty
+- [ ] Each gotcha specific to THIS skill (not generic AI behaviour)
+- [ ] Captures real failure patterns (not theoretical risks)
+- [ ] Updated after each correction
 
-## 10. Table & Structured Reference Standards
+## The Litmus Test
 
-- ALL Excel tables use the prefix tbl_ followed by a descriptive name (e.g. tbl_Period, tbl_PL_COA, tbl_SW_Role)
-- Tables use the model's green colour scheme (dark green headers, alternating light green rows)
-- Header row: Bold white text on dark green (hex 375623) background
-- Data validation dropdowns reference Helper sheet lists
-- Use structured references (tbl_Period[Column]) instead of fixed ranges wherever a table exists
-
-## 11. Key Modelling Reminders
-
-1. Always start time series data from column H
-2. Row 1 is reserved for hidden helper data
-3. Never delete or rename core named ranges
-4. Sign convention: Revenue positive, Expenses negative
-5. All growth rate drivers must reference the Scenario Manager — never hardcode growth rates
-6. Balance sheet must balance every period — include balance check rows
-7. Cash flow must reconcile — CFS closing cash must equal BS cash
-8. All sheets must display the error message bar linked to the global error string
-9. Financial Year adjustment: Year + IF(MONTH(date) > FY_MonthEnd, 1, 0)
-10. Use EOMONTH for all date calculations
-11. Default currency: AUD (configurable in Master Control)
-12. Default accounting basis: Accrual (configurable)
-
-## 12. Gotchas
-
-- Forgetting to colour input cells blue is the most common audit failure — check every assumption cell
-- Using fixed A1 ranges instead of structured table references means your workings break when rows are added
-- Zeros displayed as '0' instead of '-' look unprofessional — always apply the dash-for-zero custom format
-- Negative numbers shown with minus sign instead of parentheses breaks financial convention
-- Missing Balance Check rows mean imbalances go undetected for months
-- Comingling assumptions inside workings makes it impossible to run scenario analysis
-- Complex nested functions look impressive but erode confidence — simpler helper rows are always preferred
+After the skill runs: Do I use the output directly, or do I edit, correct, and restructure it?
+If you're iterating on the output, improve the skill, not the output. Every post-run edit is a signal that the skill is missing an instruction, a gotcha, or a constraint.

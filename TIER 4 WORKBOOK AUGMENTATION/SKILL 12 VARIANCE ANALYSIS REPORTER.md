@@ -1,11 +1,13 @@
 ---
 name: exl-cloud-variance-analysis-reporter
-description: "Build variance analysis comparing actuals to budget/forecast/prior. Use when the user says 'variance analysis', 'actual vs budget', 'compare to forecast', 'what changed vs last year', 'variance report', 'budget variance', 'explain the variances', or invokes /variance-analysis-reporter. Builds structured comparison sheet with dollar and percentage variances. Feeds Commentary and Board Paper. Do NOT use for commentary text (use §4), board paper assembly (use §5), or data cleanup."
+description: "Build variance analysis comparing actuals to budget/forecast/prior. Use when the user says 'variance analysis', 'actual vs budget', 'compare to forecast', 'what changed vs last year', 'variance report', 'budget variance', 'explain the variances', or invokes /variance-analysis-reporter. Builds structured comparison sheet with dollar and percentage variances. Feeds Commentary and Board Paper. Do NOT use for commentary text, board paper assembly, or data cleanup."
 ---
 
 # Variance Analysis Reporter
 
 This skill builds a structured variance analysis sheet that compares actual financial results against budget, forecast, or prior period data. It calculates dollar and percentage variances, flags material items, and provides the data foundation for management commentary.
+
+**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
 
 ## 1. When to Use
 
