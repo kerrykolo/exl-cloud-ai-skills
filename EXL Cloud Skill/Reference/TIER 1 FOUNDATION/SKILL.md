@@ -1,6 +1,6 @@
 ---
 name: exl-cloud-tier-1
-description: "Router for EXL Cloud Tier 1 quality and modelling standards. Covers: (1) skill/model auditing, quality checks, hardcode review, formula discipline, skill structure — use for 'check my skill', 'audit this skill', 'quality check', 'foundations check', 'skill audit'; (2) Excel formatting, colour coding, number formats, EXL Cloud conventions — use for 'format my model', 'colour code inputs', 'apply EXL Cloud standards', 'blue inputs black formulas', 'fix number formats'. Always views the correct Reference/ file before proceeding — never guesses."
+description: "Router for EXL Cloud Tier 1 quality and modelling standards. Sub-skills: (1) Foundations — skill/model auditing, quality checks, hardcode review, formula discipline, skill structure; (2) Best Practice Modelling — Excel formatting, colour coding, number formats, EXL Cloud conventions. Reference by number e.g. 'use skill 1', 'run skill 2'. Trigger phrases — skill 1: 'check my skill', 'audit this skill', 'quality check', 'foundations check'; skill 2: 'format my model', 'colour code inputs', 'apply EXL Cloud standards', 'blue inputs black formulas'. Always views the correct Reference/ file before proceeding — never guesses."
 ---
 
 # EXL Cloud Tier 1 — Standards Router

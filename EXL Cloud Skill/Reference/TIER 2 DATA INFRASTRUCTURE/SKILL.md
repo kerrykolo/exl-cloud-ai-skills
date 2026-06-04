@@ -1,6 +1,6 @@
 ---
 name: exl-cloud-tier-2
-description: "Router for EXL Cloud Tier 2 data preparation. Covers: (1) cleaning/validating raw spreadsheet data — use for 'clean this data', 'fix formatting', 'remove duplicates', 'standardise dates', 'trim whitespace', 'numbers stored as text'; (2) mapping trial balance accounts to P&L/BS categories — use for 'map my TB', 'map trial balance', 'COA mapping', 'map Xero TB', 'categorise accounts'; (3) building tbl_Period date axis — use for 'build tbl_Period', 'set up periods', 'create date table', 'ACT FCST toggle', 'monthly periods'. Always views the correct Reference/ file before proceeding — never guesses."
+description: "Router for EXL Cloud Tier 2 data preparation. Sub-skills: (3) Clean & Validate Data — cleaning/validating raw spreadsheet data; (4) Trial Balance Mapper — mapping TB accounts to P&L/BS categories; (5) Period Table Builder — building tbl_Period date axis with ACT/FCST flags. Reference by number e.g. 'use skill 3', 'run skill 4', 'skill 5'. Trigger phrases — skill 3: 'clean this data', 'fix formatting', 'remove duplicates'; skill 4: 'map my TB', 'COA mapping', 'map Xero TB'; skill 5: 'build tbl_Period', 'create date table', 'ACT FCST toggle'. Always views the correct Reference/ file before proceeding — never guesses."
 ---
 
 # EXL Cloud Tier 2 — Data Preparation Router
