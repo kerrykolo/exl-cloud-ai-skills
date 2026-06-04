@@ -81,4 +81,11 @@ Data pool and data push workbooks do not require skills.
 
 ---
 
+## Links
+
+- [Sign up for EXL Cloud](https://www.exlcloud.io/sign-up)
+- [What's changed in Gen 2](https://model-citizn.github.io/exl-cloud-2G/)
+
+---
+
 *Built by the EXL Cloud team. For questions or support, reach out via your usual EXL Cloud contact.*
