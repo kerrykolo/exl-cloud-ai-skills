@@ -2,6 +2,8 @@
 
 Curated AI skill files for the EXL Cloud platform, built for use with Claude AI.
 
+[![Sign up for EXL Cloud](https://img.shields.io/badge/Sign%20up-EXL%20Cloud-375623?style=for-the-badge)](https://www.exlcloud.io/sign-up) [![What's changed in Gen 2](https://img.shields.io/badge/What's%20changed-Gen%202-4a90d9?style=for-the-badge)](https://model-citizn.github.io/exl-cloud-2G/)
+
 ---
 
 ## Overview
@@ -12,9 +14,8 @@ This repository contains a curated library of 15 Claude AI skills, purpose-built
 
 ## How it works
 
-1. Download a skill file from this GitHub library (one click, free)
-2. Load it into Claude following the setup steps provided
-3. Claude is instantly trained to help with that specific workbook or task
+1. Click a skill name below to open it — you can read it, download it, and upload it directly into Claude as a Project Instruction
+2. Claude is instantly trained to help with that specific workbook or task
 
 ---
 
@@ -65,7 +66,7 @@ Skills that add new sheets and structure to existing workbooks.
 
 ## Which workbooks have skills
 
-Relevant skills are listed directly inside each workbook's instructions sheet, with a download link. Clients only need to download the skills relevant to their workbooks. Skills available can be seen in the feature sheet.
+Each EXL Cloud workbook lists its relevant skills on the Instructions sheet. Only download the skills your workbook needs.
 
 Data pool and data push workbooks do not require skills.
 
@@ -75,16 +76,8 @@ Data pool and data push workbooks do not require skills.
 
 1. Download and set up EXL Cloud
 2. Browse the skills above and identify which ones are relevant to your workbooks
-3. Download the skill file (or tier combo) from this repository
-4. Load it into Claude following the setup steps provided
-5. Open your EXL Cloud workbook and start working with Claude
-
----
-
-## Links
-
-- [Sign up for EXL Cloud](https://www.exlcloud.io/sign-up)
-- [What's changed in Gen 2](https://model-citizn.github.io/exl-cloud-2G/)
+3. Click the skill name to open it, download the file, and upload it into Claude as a Project Instruction
+4. Open your EXL Cloud workbook and start working with Claude
 
 ---
 
