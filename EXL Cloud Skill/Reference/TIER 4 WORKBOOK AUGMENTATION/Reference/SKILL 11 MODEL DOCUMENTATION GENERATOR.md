@@ -1,13 +1,15 @@
 ---
-name: exl-cloud-model-documentation-generator
+name: skill-11-exl-cloud-model-documentation-generator
 description: "Generate model documentation and Instructions sheet. Use when the user says 'document this model', 'add instructions', 'create documentation', 'explain the model structure', 'model overview', 'add a readme sheet', 'document the workbook', or invokes /model-documentation-generator. Reads all sheets and produces structured documentation. Do NOT use for model building, validation checks, or commentary."
 ---
 
 # Model Documentation Generator
 
-Good models are self-documenting. This skill generates a comprehensive Instructions sheet that any new user can read to understand the workbook’s purpose, structure, inputs, outputs, and operating procedures. Without documentation, models become black boxes that only the original builder can use.
+Good models are self-documenting. This skill generates a comprehensive Instructions sheet that any new user can read to understand the workbook's purpose, structure, inputs, outputs, and operating procedures. Without documentation, models become black boxes that only the original builder can use.
 
-**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+**Type:** Encoded Preference · Workflow Automation
+
+**Before outputting:** Re-check this sheet against skill-2 and skill-1.
 
 ## 1. When to Use
 

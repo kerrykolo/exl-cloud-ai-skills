@@ -1,5 +1,5 @@
 ---
-name: exl-cloud-best-practice-modelling
+name: skill-2-exl-cloud-best-practice-modelling
 description: "Best practice financial modelling standards for the EXL Cloud platform. Use when the user says 'format my model', 'colour code my inputs', 'apply modelling best practice', 'fix my number formats', 'check my formula discipline', 'audit model structure', 'apply EXL Cloud standards', 'blue inputs black formulas', 'financial model formatting', 'build a validation sheet', or invokes /exl-cloud-best-practice-modelling. Covers colour coding, number formats, font standards, formula rules, tab structure, validation checks, and output statement layouts. Do NOT use for building calculation engines or proprietary modelling logic."
 ---
 
@@ -7,7 +7,7 @@ description: "Best practice financial modelling standards for the EXL Cloud plat
 
 These standards define the formatting, structure, and convention rules for financial models built in the EXL Cloud platform. Follow these when building, modifying, or auditing any Excel model to ensure professional, consistent, auditable output.
 
-**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+**Type:** Encoded Preference · Style / Convention Enforcement
 
 ## 1. Colour Coding Standards
 
@@ -27,7 +27,7 @@ Every cell must be coloured according to its function. This is non-negotiable.
 - Blue (inputs): hex 0070C0 — all hardcoded input cells and assumption values
 - Red (alerts/links): hex FF0000 — external links, error flags, warning values
 - Black: ALL calculation/output cells
-- White: header text on dark backgrounds
+- Every dark-green section header band MUST span from column B to the second-last used column on the sheet. Single-cell green fills are an audit failure.
 
 ## 2. Font Standards
 
@@ -78,6 +78,16 @@ All calculation sheets with time series data follow this layout:
 - Row 18: Forecast Flag — marks each column as ACT (actual/historical) or FCST (forecast)
 - Data rows: Begin at row 19 or below, depending on the sheet
 
+## 5.5 Sheet View Defaults
+
+Every sheet must hide Excel's default chrome and freeze the header block:
+
+- Hide gridlines (the grey cell-border grid)
+- Hide row & column headings (the A/B/C and 1/2/3 bars)
+- Freeze rows 1–9 so the title block + section header stay visible while
+  scrolling — use freezeRows(9), not freezeAt("A9"). The latter freezes ABOVE
+  the split and hides rows 1–8.
+
 ## 6. Workings and Calculation Rules
 
 These rules ensure every model is auditable and trustworthy:
@@ -117,17 +127,17 @@ Every model must include a Validation Checks sheet with a comprehensive error-ch
 - Error message string displayed on every sheet header (so users see issues immediately)
 - Individual checks returning PASS (0) or FAIL (1)
 
-### Minimum Required Checks
-1. Time Series Date validation (is the chosen date in the future?)
-2. Historical data refresh status (has date been changed but data not refreshed?)
-3. Unmapped values in revenue, COGS, and expense categories
-4. Staff setup completeness (termination dates, role names unique, setup complete)
-5. Working Capital opening balance splits sum to 100%
-6. Working Capital profile percentage splits sum to 100%
-7. Balance Sheet balance check — Assets = Liabilities + Equity (every period)
-8. Cash Flow reconciliation — CFS closing cash = BS cash (every period)
-9. P&L pre vs post processing value check
-10. Monthly cash balance check (no unintended negative cash)
+### Required Validation Checks
+Every EXL Cloud model must include a Validation Checks sheet built via the Anomaly Detection skill (exl-cloud-anomaly-detection). That skill owns the canonical check catalogue and the Enabled-aware formula pattern.
+When applied to an EXL Cloud model, the following Model-Specific checks (tagged in the Anomaly Detection catalogue) must be enabled:
+- Time Series Date validation (is the chosen date in the future?)
+- Historical data refresh status (date changed but data not refreshed)
+- Unmapped values in revenue, COGS, and expense categories
+- Staff setup completeness (termination dates, role names unique, setup complete)
+- Working Capital opening balance splits sum to 100%
+- Working Capital profile percentage splits sum to 100%
+- P&L pre vs post processing value check
+- Monthly cash balance check (no unintended negative cash)
 
 ## 9. Output Statement Structure
 
@@ -187,6 +197,9 @@ Cash Balance Check (Closing Cash = BS Cash, must = 0)
 10. Use EOMONTH for all date calculations
 11. Default currency: AUD (configurable in Master Control)
 12. Default accounting basis: Accrual (configurable)
+13. Hide gridlines on every sheet (showGridlines = false)
+14. Hide row & column headings on every sheet (showHeadings = false)
+15. Freeze rows 1–9 on every sheet so the title block stays visible while scrolling — use freezeRows(9), not freezeAt("A9")
 
 ## 12. Gotchas
 

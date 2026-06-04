@@ -1,5 +1,5 @@
 ---
-name: exl-cloud-change-log-audit-trail
+name: Skill-14-exl-cloud-change-log-audit-trail
 description: "Add Change Log and Claude Log sheets. Use when the user says 'add change log', 'add audit trail', 'track changes', 'version history', 'add governance sheets', 'claude log', 'AI audit trail', 'model governance', or invokes /change-log-audit-trail. Creates structured change tracking sheets. Independent of other skills. Do NOT use for model building, validation, or commentary."
 ---
 
@@ -7,7 +7,9 @@ description: "Add Change Log and Claude Log sheets. Use when the user says 'add 
 
 Model governance requires knowing who changed what, when, and why. This skill adds two tracking sheets: a Change Log for human-readable version history, and a Claude Log for AI-specific audit trails. Together they provide complete traceability for model reviews, audits, and handovers.
 
-**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+**Type:** Encoded Preference · Operational Procedure
+
+**Before outputting:** Re-check this sheet against skill-2 and skill-1.
 
 ## 1. When to Use
 
@@ -58,5 +60,5 @@ Columns: Timestamp | Skill Used | Sheet(s) | Cells Modified | Action Taken | Ver
 
 - This skill ADDS sheets — it does not modify existing data
 - Do NOT overwrite existing Change Log or Claude Log sheets — append new rows
-- Tab colours: Change Log uses grey (#808080), Claude Log uses grey (#808080)
+- Tab colours: Change Log uses light grey (#D9D9D9), Claude Log uses dark grey (#808080) so the two governance sheets are visually distinguishable
 - Both sheets should be formatted as Excel Tables for easy filtering and sorting

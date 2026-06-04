@@ -1,13 +1,15 @@
 ---
-name: exl-cloud-trial-balance-mapper
-description: "Map trial balance accounts to standardised reporting categories. Use when the user says ‘map my TB’, ‘map trial balance’, ‘categorise accounts’, ‘set up account mapping’, ‘map Xero TB’, ‘map MYOB accounts’, ‘standardise my chart of accounts’, ‘COA mapping’, ‘map accounts to P&L and BS’, or invokes /trial-balance-mapper. Builds an Account Mapping sheet with pipe-delimited many-to-one mappings from granular source accounts to standardised P&L and BS categories. Depends on clean data (Clean & Validate Data). Do NOT use for TB reconciliation between two TBs, model building, or journal posting."
+name: skill-4-exl-cloud-trial-balance-mapper
+description: "Map trial balance accounts to standardised reporting categories. Use when the user says 'map my TB', 'map trial balance', 'categorise accounts', 'set up account mapping', 'map Xero TB', 'map MYOB accounts', 'standardise my chart of accounts', 'COA mapping', 'map accounts to P&L and BS', or invokes /trial-balance-mapper. Builds an Account Mapping sheet with pipe-delimited many-to-one mappings from granular source accounts to standardised P&L and BS categories. Depends on clean data (exl-cloud-clean-validate-data). Do NOT use for TB reconciliation between two TBs, model building, or journal posting."
 ---
 
 # Trial Balance Mapper
 
-This skill bridges the gap between a client’s raw chart of accounts and a standardised reporting structure. Every accounting system uses different account codes and naming conventions — this skill normalises them into a consistent framework that reports, models, and dashboards can consume.
+This skill bridges the gap between a client's raw chart of accounts and a standardised reporting structure. Every accounting system uses different account codes and naming conventions — this skill normalises them into a consistent framework that reports, models, and dashboards can consume.
 
-**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+**Type:** Encoded Preference · Workflow Automation
+
+**Before outputting:** Re-check this sheet against skill-2 and skill-1.
 
 ## 1. When to Use
 
@@ -30,7 +32,7 @@ This skill bridges the gap between a client’s raw chart of accounts and a stan
 - Classify each account as P&L or BS based on account type (Revenue, Expense, Asset, Liability, Equity)
 
 ### Step 2: Build the Account Mapping Sheet
-- Create a new ‘Account Mapping’ sheet
+- Create a new 'Account Mapping' sheet
 - Columns: Source Code, Source Name, Account Type, Mapped Category, Sub-Category
 - use pipe-delimited format for many-to-one mappings (multiple Source accounts to one category)
 - Pre-populate mappings using intelligent matching (keyword detection on Account names)
@@ -48,11 +50,11 @@ BS Categories: Cash, Debtors, Inventory, Prepayments, Fixed Assets, Intangibles,
 
 ## 4. Gotchas
 
-- Xero account types use long-form names (‘Current Liability account’ not ‘Current Liability’) — match against the full string or lookups will fail.
+- Xero account types use long-form names ('Current Liability account' not 'Current Liability') — match against the full string or lookups will fail.
 - Some clients use the same account name for different entities with different codes — always map by Code + Name, never Name alone.
 - Bank accounts may appear as both Asset (bank balance) and P&L (bank fees) — check the account type, not just the name.
 - Retained Earnings is often a single line in the TB but may need splitting into Opening RE + Current Year Earnings for the BS.
-- GST/VAT clearing accounts can be Asset or Liability depending on the balance — map to a dedicated ‘Tax’ BS category.
+- GST/VAT clearing accounts can be Asset or Liability depending on the balance — map to a dedicated 'Tax' BS category.
 
 ## 5. Constraints
 

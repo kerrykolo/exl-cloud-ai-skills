@@ -1,5 +1,5 @@
 ---
-name: exl-cloud-clean-validate-data
+name: skill-3-exl-cloud-clean-validate-data
 description: "Clean and validate spreadsheet data before downstream use. Use when the user says 'clean this data', 'fix the formatting', 'remove duplicates', 'standardise dates', 'trim whitespace', 'numbers stored as text', 'data quality check', 'validate this data', 'prep this data', 'clean before mapping', or invokes /clean-validate-data. Handles whitespace trimming, inconsistent casing, text-to-number conversion, date standardisation, duplicate detection, and mixed-type column flagging. Runs BEFORE Trial Balance Mapper or Period Table Builder. Do NOT use for financial model building, TB mapping, or report formatting."
 ---
 
@@ -7,7 +7,9 @@ description: "Clean and validate spreadsheet data before downstream use. Use whe
 
 This skill automates the tedious but critical first step of any data workflow: ensuring the source data is clean, consistent, and ready for downstream consumption. Dirty data is the number one cause of broken lookups, failed pivot tables, and incorrect model outputs.
 
-**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+**Type:** Encoded Preference · Workflow Automation
+
+**Before outputting:** Re-check this sheet against skill-2 and skill-1.
 
 ## 1. When to Use
 

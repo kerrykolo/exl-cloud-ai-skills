@@ -1,5 +1,5 @@
 ---
-name: exl-cloud-foundations
+name: skill-1-exl-cloud-foundations
 description: "Foundational quality standards for building, reviewing, and improving SKILL.md files and Excel financial models. Use when the user says 'check my skill', 'audit this skill', 'quality check', 'review my model for hardcodes', 'are my assumptions separated', 'skill audit', 'check my formulas', 'best practice check', 'foundations check', or invokes /exl-cloud-foundations. Covers skill structure, description writing, the 5 skill killers, quality checklist, formula discipline, and validation standards. Do NOT use for building financial models (use exl-cloud-best-practice-modelling) or data cleanup."
 ---
 

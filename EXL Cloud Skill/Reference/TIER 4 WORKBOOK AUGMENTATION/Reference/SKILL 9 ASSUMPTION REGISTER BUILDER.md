@@ -1,5 +1,5 @@
 ---
-name: exl-cloud-assumption-register-builder
+name: skill-9-exl-cloud-assumption-register-builder
 description: "Extract assumptions from a workbook into a structured register. Use when the user says 'extract assumptions', 'build assumption register', 'list all inputs', 'find hardcoded values', 'assumption audit', 'what assumptions does this model use', 'document the inputs', or invokes /assumption-register-builder. Scans all sheets, identifies input cells, and creates an Assumption Register sheet. Independent of other skills. Do NOT use for model building, validation checks, or commentary."
 ---
 
@@ -7,7 +7,9 @@ description: "Extract assumptions from a workbook into a structured register. Us
 
 Every financial model contains assumptions — growth rates, margins, tax rates, discount rates, timing parameters. This skill finds them all and organises them into a single, auditable register. Without this, assumptions are scattered across sheets, buried in formulas, and impossible to scenario-test.
 
-**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+**Type:** Encoded Preference · Investigation / Triage
+
+**Before outputting:** Re-check this sheet against skill-2 and skill-1.
 
 ## 1. When to Use
 
@@ -22,7 +24,9 @@ Every financial model contains assumptions — growth rates, margins, tax rates,
 The skill scans each sheet and identifies:
 - Cells with hardcoded numeric values that are referenced by formulas (input cells)
 - Named ranges pointing to constant values
-- Cells formatted as blue text (standard input convention)
+- Cells formatted as blue text (hex 0070C0) on light green bg (hex E2E9DA)
+- Cells formatted as blue text (hex 0070C0) on medium green bg (hex ABBB93)
+- Cells formatted as blue text (hex 0070C0) on no fill
 - Cells with labels containing keywords: rate, growth, margin, assumption, factor, multiple, discount, term
 
 ## 3. Register Structure

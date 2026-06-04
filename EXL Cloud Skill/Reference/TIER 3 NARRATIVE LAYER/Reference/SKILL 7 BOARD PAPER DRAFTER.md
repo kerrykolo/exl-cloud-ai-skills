@@ -1,13 +1,15 @@
 ---
-name: exl-cloud-board-paper-drafter
-description: "Assemble a board paper from financial data and commentary inputs. Use when the user says 'draft the board paper', 'board report', 'prepare board pack', 'management report for the board', 'board meeting paper', 'executive summary for board', or invokes /board-paper-drafter. Consumes monthly commentary, cash flow narrative, variance analysis, and KPI data. Do NOT use for monthly commentary alone (use §4), cash flow narrative (use §6), or data cleanup."
+name: skill-7-exl-cloud-board-paper-drafter
+description: "Assemble a board paper from financial data and commentary inputs. Use when the user says 'draft the board paper', 'board report', 'prepare board pack', 'management report for the board', 'board meeting paper', 'executive summary for board', or invokes /board-paper-drafter. Consumes monthly commentary, cash flow narrative, variance analysis, and KPI data. Do NOT use for monthly commentary alone (use exl-cloud-monthly-commentary-generator), cash flow narrative (use exl-cloud-cash-flow-narrative), or data cleanup."
 ---
 
 # Board Paper Drafter
 
 This skill assembles a complete, board-ready management report by consuming outputs from sibling skills. It does not generate raw analysis — it structures and presents the work already done by the Commentary Generator, Cash Flow Narrative, Variance Reporter, and KPI Dashboard into a coherent document.
 
-**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+**Type:** Encoded Preference · Workflow Automation
+
+**Before outputting:** Re-check this sheet against skill-2 and skill-1.
 
 ## 1. When to Use
 

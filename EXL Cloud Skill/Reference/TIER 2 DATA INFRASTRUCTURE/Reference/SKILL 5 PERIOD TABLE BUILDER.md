@@ -1,5 +1,5 @@
 ---
-name: exl-cloud-period-table-builder
+name: skill-5-exl-cloud-period-table-builder
 description: "Build the tbl_Period date structure for time-series workbooks. Use when the user says 'build tbl_Period', 'set up periods', 'create date table', 'build time series', 'set up the date axis', 'period table', 'ACT FCST toggle', 'financial year dates', 'monthly periods', or invokes /period-table-builder. Builds a structured Excel table with period start dates, end dates, days in period, period counters, financial year, and ACT/FCST flags. Independent of Clean Data and TB Mapper. Do NOT use for calendar scheduling, project timelines, or non-financial date structures."
 ---
 
@@ -7,7 +7,9 @@ description: "Build the tbl_Period date structure for time-series workbooks. Use
 
 The period table (tbl_Period) is the backbone of every EXL Cloud time-series workbook. It defines the date columns that all calculation engines, reports, and dashboards reference. Getting this right means every downstream formula inherits correct dates, financial years, and ACT/FCST classifications automatically.
 
-**Before running:** Read foundation skill validation (exl-cloud-foundations) and confirm all outputs will meet EXL Cloud best practice standards.
+**Type:** Encoded Preference · Workflow Automation
+
+**Before outputting:** Re-check this sheet against skill-2 and skill-1.
 
 ## 1. When to Use
 
