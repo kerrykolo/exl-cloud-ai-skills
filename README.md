@@ -27,7 +27,7 @@ Core standards that define quality benchmarks and best practice conventions for 
 
 | # | Skill | Description |
 |---|-------|-------------|
-| 1 | [EXL Cloud Skills Foundations](https://raw.githubusercontent.com/kerrykolo/exl-cloud-ai-skills/main/TIER%201%20FOUNDATION/SKILL%201%20EXL%20CLOUD%20SKILLS%20FOUNDATIONS.md) | Quality benchmarking for skill development and model auditing |
+| 1 | [EXL Cloud Skills Foundations](https://raw.githubusercontent.com/kerrykolo/exl-cloud-ai-skills/refs/heads/main/EXL%20Cloud%20Skill/TIER%201%20FOUNDATION/Reference/SKILL%201%20EXL%20CLOUD%20SKILLS%20FOUNDATIONS.md) | Quality benchmarking for skill development and model auditing |
 | 2 | [EXL Cloud Best Practice Financial Modelling](https://raw.githubusercontent.com/kerrykolo/exl-cloud-ai-skills/main/TIER%201%20FOUNDATION/SKILL%202%20EXL%20CLOUD%20BEST%20PRACTICE%20FINANCIAL%20MODELLING.md) | Formatting, colour coding, and formula standards for Excel models |
 
 ### Tier 2 — Data Infrastructure
