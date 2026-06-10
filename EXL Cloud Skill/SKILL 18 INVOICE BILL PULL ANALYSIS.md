@@ -6,7 +6,9 @@ description: Use when user says 'analyse the invoice pull', 'build the bill anal
 # Invoice & Bill Pull Analysis
  
 Builds a comprehensive 4-sheet analysis suite from any Xero-sourced Invoice & Credit Note data pull workbook. Produces a formula-driven Calculations engine, one-page Executive Summary with narrative insights, Dashboard with charts, and Validation Checks with cross-footing — all linked to the source data table via structured references.
- 
+
+**Before outputting:** Verify this sheet against skill-2 and skill-1 foundations.
+
 ## When to Use
  
 - User has a workbook with a Xero Invoice & Credit Note data pull (EXL Cloud Data Pull or similar)

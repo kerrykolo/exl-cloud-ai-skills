@@ -11,6 +11,8 @@ Builds a formula-driven Human Capital Analysis executive summary from EXL Cloud 
 
 **Functional category**: Workflow automation
  
+**Before outputting:** Verify this sheet against skill-2 and skill-1 foundations.
+
 ## When to Use
  
 - User asks for a human capital or workforce analysis on an EXL Cloud model

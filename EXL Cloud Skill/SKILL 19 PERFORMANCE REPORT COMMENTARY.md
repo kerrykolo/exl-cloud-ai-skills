@@ -6,7 +6,9 @@ description: Use when the user says 'write dashboard commentary', 'populate the 
 # Performance Report Dashboard Commentary
  
 Reads P&L and summary data from an EXL Cloud Performance Reports workbook and writes CF4-level business analysis commentary into the named text boxes on each dashboard sheet. Commentary is company-agnostic in structure but specific in content — driven entirely by the actual data in the workbook rather than any pre-loaded assumptions.
- 
+
+**Before outputting:** Verify this sheet against skill-2 and skill-1 foundations.
+
 ---
  
 ## Context Required
