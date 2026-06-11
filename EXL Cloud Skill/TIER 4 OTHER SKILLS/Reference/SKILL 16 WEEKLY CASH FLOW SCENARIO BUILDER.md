@@ -157,7 +157,9 @@ Green palette headers (#2D6A4F), sub-headers (#D8F3DC), tab colour #1A3C2E. Aria
 
 ## Step 6: Build Validation Checks
 
-Create "Validation Checks" sheet with 10+ checks:
+**First:** Check if a Validation Checks sheet already exists. If it does, append new checks to the existing sheet rather than deleting and rebuilding. If it does not, create "Validation Checks" sheet 
+
+the model checks to add (10+):
 
 | # | Check | Category | Expected | Actual | Status |
 |---|-------|----------|----------|--------|--------|
@@ -171,6 +173,9 @@ Create "Validation Checks" sheet with 10+ checks:
 
 Apply conditional formatting: PASS = #C4DDD2/#006100, FAIL = #FFC7CE/#9C0006. Summary: "X of N checks passed".
 
+**Colour formatting:**
+- Sheet tab colour: #384329 (dark green)
+
 ## Step 7: Change Log & Claude Log
 - **Change Log**: Numbered entries (Date, Author, Description, Sheets Affected)
 - **Claude Log**: Standard header (Turn #, Date, User Request, Action Taken, Details, Outcome)
@@ -183,7 +188,7 @@ Apply conditional formatting: PASS = #C4DDD2/#006100, FAIL = #FFC7CE/#9C0006. Su
 - **Two entries for the same account stack** — the model sums all overlay rows per account. Use deliberately for layered effects (e.g., annual decline + Christmas shutdown).
 ### Multi-Workbook Environment
 - **execute_office_js may fail with InactiveWorkbook** when peer workbooks are connected. Use set_cell_range as the primary write method — it's more reliable in multi-workbook sessions.
-- **Freeze panes often fail** in multi-workbook sessions. Defer as last step; be prepared to skip.
+
 ### Sign Convention
 - Revenue/Sale: positive = more cash IN, negative = less
 - Expense: negative = more cash OUT (cost increase), positive = less cash OUT (savings)

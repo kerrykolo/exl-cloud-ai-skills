@@ -179,7 +179,7 @@ Update Change Log and Claude Log with details of the build.
 - **Charts MUST be positioned below all data rows.** If placed mid-sheet they overlap content and hide data. Calculate chart top position from the last data row.
 - **Role classification can't always be formula-driven.** Job titles are messy (inconsistent naming, missing titles). Use blue hardcoded input cells with cell notes explaining classification logic. Always verify category total = active headcount.
 - **Gap analysis assumptions need source citations.** When estimating missing salary costs using industry benchmarks, document the benchmark rate and basis in cell notes. Use blue font + yellow fill for assumption cells.
-- **Freeze panes fail with multiple workbooks open.** If the user has peer workbooks connected, freeze panes will throw InactiveWorkbook errors. Skip and note for the user to set manually.
+
 - **Merge cells for long text in Sections 3 and 5.** Anomaly categories (D:G) and CFO actions (C:D) need merged cells to display full text. Don't rely on column width alone.
 - **Cross-check formulas use IF().** Pattern: `=IF(C24=C9,"PASS: [description]","FAIL: [detail]")` — returns readable PASS/FAIL text, not just 0/1.
 - **tPayroll may include more than 2 statuses.** Check for CASUAL, CONTRACTOR, or other status values beyond ACTIVE/TERMINATED.

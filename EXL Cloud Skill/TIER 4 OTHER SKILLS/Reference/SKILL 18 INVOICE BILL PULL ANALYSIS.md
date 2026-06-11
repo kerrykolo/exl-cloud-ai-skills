@@ -127,12 +127,14 @@ Build local source tables on the Dashboard sheet that reference Calculations, th
 Chart formatting: titles bold, axis format `$#,##0,K`, legend at bottom for multi-series.
  
 ### Step 7: Build Validation Checks Sheet
-**Done when:** All checks have formulas, status is PASS/FLAG/FAIL with colour coding, and notes explain any non-PASS items.
- 
-Standard check structure:
+**Done when:** All checks (old + new) have formulas, status is PASS/FLAG/FAIL with colour coding, and notes explain any non-PASS items.
+
+**First:** Check if a Validation Checks sheet already exists. If it does, append new checks to the existing sheet rather than deleting and rebuilding. Preserve all existing checks and add invoice/bill-specific checks below them.
+
+**Standard check structure:**
 | # | Check Name | Expected | Actual | Variance | Status |
- 
-**Required checks (minimum 12):**
+
+**Invoice & Bill Pull–specific checks to add (minimum 12):**
 1. Grand Total: Calculations ties to source `=SUM(table[Amount])`
 2. Tracking Category 1 total ties to grand total
 3. Tracking Category 2 total ties to grand total
@@ -145,22 +147,26 @@ Standard check structure:
 10. Untagged TC2 % below 50% threshold
 11. Credit notes < 5% of invoiced total
 12. No formula errors in Calculations sheet
+
 **Status logic:**
 - PASS: Variance < $1 (amounts) or exactly zero (counts)
 - FLAG: Variance < $1,000 (amounts) or < 100 (counts) — immaterial
 - FAIL: Above thresholds
-Apply colour formatting: PASS = green (#C4DDD2 fill, #006100 font), FLAG = amber (#FFEB9C fill, #9C6500 font), FAIL = red (#FFC7CE fill, #9C0006 font).
- 
-Add summary counts (PASS/FLAG/FAIL) and notes section explaining each non-PASS check.
+
+**Colour formatting:**
+- PASS = green (#C4DDD2 fill, #006100 font)
+- FLAG = amber (#FFEB9C fill, #9C6500 font)
+- FAIL = red (#FFC7CE fill, #9C0006 font)
+- Sheet tab colour: #384329 (dark green)
+
+Add summary counts (PASS/FLAG/FAIL) and notes section explaining each non-PASS check. If combining with existing checks, maintain the existing check numbering and append invoice checks at the end with a new section header.
  
 ### Step 8: Update Logs and Finalise
-**Done when:** Change Log and Claude Log updated, freeze panes applied as LAST step, tab colours set.
  
 1. Update Change Log with build summary
 2. Update Claude Log with turn details
 3. Set tab colours (Calculations=green, Exec Summary=dark green, Dashboard=forest green, Validation=red)
-4. Set freeze panes on each new sheet (LAST step — after all data is written)
-5. Position admin sheets (Change Log, Claude Log) at end of workbook
+4. Position admin sheets (Change Log, Claude Log) at end of workbook
 ## Output Structure Summary
  
 ```
@@ -183,4 +189,4 @@ Claude Log              — Turn details
 7. **Date serials in headers and charts.** Xero exports store dates as Excel serial numbers. Always apply `numberFormat: "mmm yy"` to date cells. Never leave raw serials (e.g., 46168) visible.
 8. **Unique contact count formula fragility.** `SUMPRODUCT(1/COUNTIF(...))` breaks if any contact name is blank (division by zero). Wrap with IFERROR or filter out blanks: `=SUMPRODUCT((table[Contact]<>"")/COUNTIF(IF(table[Contact]<>"",table[Contact]),IF(table[Contact]<>"",table[Contact])))`.
 9. **Status column may contain unexpected values.** Beyond PAID/AUTHORISED/DRAFT, Xero can export VOIDED, DELETED, or blank statuses. Discover all unique statuses in Step 2 and account for them in the KPI section.
-10. **Workbook may lose focus during multi-sheet builds.** If multiple workbooks are open, `freezePanes` and `worksheet.activate()` calls fail with `InactiveWorkbook`. Always attempt freeze panes LAST, and if they fail, flag as a pending item for the user to retry when the workbook has focus.
+10. **Conditional formatting background fills can unintentionally mask text when applied to adjacent cells.** If a header relies on trailing white space to span across multiple empty columns, applying or copying a solid background format to the cells immediately to its right will overlay and obscure the underlying text.
