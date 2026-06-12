@@ -140,3 +140,35 @@ Run this checklist against every skill before deploying:
 
 After the skill runs: Do I use the output directly, or do I edit, correct, and restructure it?
 If you're iterating on the output, improve the skill, not the output. Every post-run edit is a signal that the skill is missing an instruction, a gotcha, or a constraint.
+
+## 11. Workbook Optimization Routing — High Priority Enhancement Map
+
+When a user mentions a workbook by name and asks to "enhance" it, use this lookup table to identify the optimal skill sequence. Match the workbook name (exact or fuzzy), then suggest those skills to the user for confirmation.
+
+### Workbook-to-Skill Mapping
+
+| Workbook | Recommended Skills | Notes |
+|----------|-------------------|-------|
+| **Performance Report** | 1, 2, 3, 7, 10, 12, 13, 15, 19 | Dashboard commentary + variance + KPI tiles |
+| **Positions & Returns** | 1, 2, 3, 10, 13, 15 | Quality + validation + KPI dashboard |
+| **1-way Cash Flow Scenario Model** | 1, 2, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 | Full governance + scenarios |
+| **1-way Profit Performance Scenario Model** | 1, 2, 3, 5, 6, 7, 9, 10, 11, 12, 13, 14, 15 | Full governance + P&L commentary |
+| **Weel Expense Model** | 1, 2, 3, 5, 7, 9, 10, 11, 13, 14, 15 | Expense tracking + governance |
+| **Accounts Receivable Model** | 1, 2, 3, 5, 7, 9, 10, 11, 13, 14, 15, 18 | AR-specific + invoice analysis |
+| **Weekly Cash Flow Model** | 1, 2, 3, 6, 7, 8, 9, 10, 13, 14, 15, 16 | Weekly scenarios + cash narrative |
+| **3-Way Driver-based Financial Model** | 1, 2, 3, 5, 7, 9, 10, 11, 13, 14, 15 | Full 3-way + governance |
+| **Profit & Loss Insights** | 1, 2, 3, 6, 10, 12, 13 | P&L analysis + variance |
+| **Trial Balance Insights** | 1, 2, 3, 4, 10, 12, 13 | TB mapping + variance |
+| **Accounts Receivable Insights** | 1, 2, 3, 10, 12, 13, 18 | AR data + analysis |
+| **Accounts Payable Insights** | 1, 2, 3, 10, 12, 13, 18 | AP data + analysis |
+| **Consolidated Workbook (P&L and BS)** | 1, 2, 3, 4, 6, 10 | Consolidated + TB mapping |
+| **Bookkeeping Quoting Tool** | 1, 2, 3, 5, 9, 10, 11, 13, 14, 18 | Data input + governance + analysis |
+| **Human Capital Model** | 1, 2, 3, 5, 9, 10, 13, 14, 17 | HC executive summary + payroll analysis |
+| **Financial Control Master Toolkit** | 1, 2, 3, 10 | Quality control + validation |
+| **R&D Template** | 1, 2, 3, 7, 10, 13, 15 | R&D narrative + KPI dashboard |
+| **Advanced Rolling Property Development Model** | 1, 2, 3, 5, 7, 9, 10, 13, 14, 15 | Complex property model governance |
+
+### Routing Logic
+
+Trigger phrases include: "enhance", "optimize", "improve", "what skills should I run", "best workflow", "optimize this workbook", "help me improve", "run the best skills", "what's optimal", "next steps", or any request for skill/workflow guidance
+
