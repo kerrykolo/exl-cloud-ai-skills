@@ -55,3 +55,4 @@ Each tile is a 4-row x 3-column merged block containing:
 - Maximum 8 tiles per dashboard (more reduces readability)
 - All values must link via formulas to source sheets
 - Do NOT include detailed tables on the dashboard — keep it visual and summary-level
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

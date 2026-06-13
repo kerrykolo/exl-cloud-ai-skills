@@ -85,3 +85,4 @@ The skill produces:
 - Do NOT delete rows or columns without explicit user approval
 - Do NOT change number formats on currency columns (preserve the user's preferred format)
 - Do NOT run on protected sheets — ask the user to unprotect first
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

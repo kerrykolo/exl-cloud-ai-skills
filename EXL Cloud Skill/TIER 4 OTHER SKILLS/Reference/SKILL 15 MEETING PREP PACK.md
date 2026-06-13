@@ -64,3 +64,4 @@ Walking into a board or committee meeting without preparation is a career risk. 
 - Keep the total brief to 1-2 pages maximum
 - Do NOT include full financial statements — reference the board paper for detail
 - All numbers must be traceable to workbook cells
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

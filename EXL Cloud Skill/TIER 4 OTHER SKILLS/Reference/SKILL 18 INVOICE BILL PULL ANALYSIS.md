@@ -190,3 +190,7 @@ Claude Log              — Turn details
 8. **Unique contact count formula fragility.** `SUMPRODUCT(1/COUNTIF(...))` breaks if any contact name is blank (division by zero). Wrap with IFERROR or filter out blanks: `=SUMPRODUCT((table[Contact]<>"")/COUNTIF(IF(table[Contact]<>"",table[Contact]),IF(table[Contact]<>"",table[Contact])))`.
 9. **Status column may contain unexpected values.** Beyond PAID/AUTHORISED/DRAFT, Xero can export VOIDED, DELETED, or blank statuses. Discover all unique statuses in Step 2 and account for them in the KPI section.
 10. **Conditional formatting background fills can unintentionally mask text when applied to adjacent cells.** If a header relies on trailing white space to span across multiple empty columns, applying or copying a solid background format to the cells immediately to its right will overlay and obscure the underlying text.
+
+## Constraints
+
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

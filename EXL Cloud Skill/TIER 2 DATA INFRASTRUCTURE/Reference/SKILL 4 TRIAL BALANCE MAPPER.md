@@ -61,3 +61,4 @@ BS Categories: Cash, Debtors, Inventory, Prepayments, Fixed Assets, Intangibles,
 - Do NOT modify the source TB data — mapping is a separate sheet that references the source
 - Do NOT assume the chart of accounts structure — read it from the data
 - Do NOT create mappings that are not verifiable against the source TB totals
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

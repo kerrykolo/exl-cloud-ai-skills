@@ -57,3 +57,4 @@ Good models are self-documenting. This skill generates a comprehensive Instructi
 - Do NOT overwrite an existing Instructions sheet without asking
 - Documentation must be accurate to the current state of the workbook — do not describe sheets that do not exist
 - Keep language simple and jargon-free — the audience may not be financial modellers
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

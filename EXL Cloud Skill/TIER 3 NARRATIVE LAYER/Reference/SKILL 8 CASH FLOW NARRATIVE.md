@@ -70,3 +70,4 @@ This skill reads cash flow data from the workbook and produces structured, plain
 - Do NOT fabricate cash movement explanations — if the driver is unclear, say so
 - Do NOT include forecast cash commentary unless the user explicitly provides forward estimates
 - All amounts must be traceable to workbook cells
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

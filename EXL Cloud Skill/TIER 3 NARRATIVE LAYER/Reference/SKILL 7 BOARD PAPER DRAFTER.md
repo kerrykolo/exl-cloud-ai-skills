@@ -74,3 +74,4 @@ This skill consumes outputs from:
 - Do NOT fabricate forward-looking statements — only include if user provides the outlook
 - Do NOT include appendices unless explicitly requested
 - All numbers must be traceable to workbook cells
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

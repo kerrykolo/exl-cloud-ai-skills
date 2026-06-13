@@ -59,3 +59,4 @@ Columns: Line Item | Actual | Budget | Variance ($) | Variance (%) | Fav/Unfav |
 - All variances must be formulas, not hardcoded calculations
 - Materiality thresholds should be in named cells for easy adjustment
 - Do NOT include commentary text on this sheet — that belongs in the Commentary Generator output
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

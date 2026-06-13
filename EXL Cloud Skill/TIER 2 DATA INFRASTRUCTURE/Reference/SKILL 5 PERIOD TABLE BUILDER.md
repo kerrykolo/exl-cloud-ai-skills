@@ -62,3 +62,4 @@ tbl_Period contains one row per period with these columns:
 - Do NOT hardcode dates — all dates derived from Start_Date and EOMONTH
 - Do NOT mix periodicities in a single table (no monthly + quarterly in one tbl_Period)
 - ACT/FCST cutoff must reference a named range or Master Control cell, not a hardcoded date
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

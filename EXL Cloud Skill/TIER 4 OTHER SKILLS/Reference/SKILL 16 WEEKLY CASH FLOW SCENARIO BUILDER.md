@@ -208,3 +208,7 @@ Apply conditional formatting: PASS = #C4DDD2/#006100, FAIL = #FFC7CE/#9C0006. Su
 3. Executive Summary exists with overview, comparison table, assumptions, and risk flags
 4. Validation Checks: 10+ checks, all PASS
 5. Change Log and Claude Log document all work
+
+## Constraints
+
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

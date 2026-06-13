@@ -52,3 +52,4 @@ The Assumption Register sheet contains:
 - Do NOT change existing cell references or named ranges
 - Do NOT auto-categorise assumptions — suggest categories but let the user confirm
 - Do NOT include structural constants (12, 365, 100) unless they are clearly business assumptions
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

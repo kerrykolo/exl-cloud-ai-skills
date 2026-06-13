@@ -77,3 +77,4 @@ Conditional formatting: PASS green, FAIL red, NA grey (#F2F2F2 fill, #808080 tex
 - Status cells must reference source cells, not hardcoded values
 - Do NOT delete or overwrite an existing Validation Checks sheet — ask the user first
 - Each check must have a meaningful name that a non-modeller can understand
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

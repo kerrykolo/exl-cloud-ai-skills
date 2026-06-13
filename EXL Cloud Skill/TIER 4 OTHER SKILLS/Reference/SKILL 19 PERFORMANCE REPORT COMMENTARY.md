@@ -148,3 +148,7 @@ Each commentary block follows this structure:
  
 No budget has been loaded; all variances shown reflect actual versus prior year performance only.
 ```
+
+## Constraints
+
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

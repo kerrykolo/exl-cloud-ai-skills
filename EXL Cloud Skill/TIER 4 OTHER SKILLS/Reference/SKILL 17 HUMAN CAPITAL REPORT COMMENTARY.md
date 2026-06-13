@@ -186,3 +186,7 @@ Update Change Log and Claude Log with details of the build.
 - **Super type varies.** STATUTORY = percentage-based (usually 12%), FIXEDAMOUNT = dollar top-up. Some staff have both. Handle each in the analysis.
 - **Date serials in payroll.** Start and termination dates are Excel serials. Convert using `datetime(1899,12,30) + timedelta(days=serial)` in Python for accurate tenure calculations.
 - **The 4.a Summary sheet structure varies by model.** Don't hardcode row references — read the row labels first to find Base Salary, Super, STI, Bonus, Payroll Tax, and Total rows dynamically.
+
+## Constraints
+
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

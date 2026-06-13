@@ -62,3 +62,4 @@ Columns: Timestamp | Skill Used | Sheet(s) | Cells Modified | Action Taken | Ver
 - Do NOT overwrite existing Change Log or Claude Log sheets — append new rows
 - Tab colours: Change Log uses light grey (#D9D9D9), Claude Log uses dark grey (#808080) so the two governance sheets are visually distinguishable
 - Both sheets should be formatted as Excel Tables for easy filtering and sorting
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings

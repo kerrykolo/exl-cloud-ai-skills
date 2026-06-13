@@ -66,3 +66,4 @@ The skill produces commentary in this order:
 - Commentary must reference specific cells/ranges so the reader can trace back to source
 - Do NOT fabricate explanations — if the variance driver is unclear from the data, say so
 - Do NOT include forward-looking statements unless explicitly asked
+- Do NOT freeze panes, hide gridlines, or modify sheet view settings
