@@ -8,7 +8,7 @@ Curated AI skill files for the EXL Cloud platform, built for use with Claude AI.
 
 ## Overview
 
-This repository contains a curated library of 15 Claude AI skills, purpose-built for EXL Cloud workbooks. Skills are small instruction files that tell Claude exactly how to help inside a specific workbook or task — no setup, no technical knowledge required.
+This repository contains a curated library of 19 Claude AI skills, purpose-built for EXL Cloud workbooks. Skills are small instruction files that tell Claude exactly how to help inside a specific workbook or task — no setup, no technical knowledge required.
 
 ---
 
@@ -19,7 +19,7 @@ This repository contains a curated library of 15 Claude AI skills, purpose-built
 
 ---
 
-## The 15 Skills
+## The 19 Skills
 
 Skills are organised into four tiers based on plan level.
 
@@ -49,18 +49,22 @@ Text-output skills that generate commentary, narratives, and board-ready documen
 | 7 | [Board Paper Drafter](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%203%20NARRATIVE%20LAYER/Reference/SKILL%207%20BOARD%20PAPER%20DRAFTER.md) | Assembles a complete board-ready report from commentary and financial data |
 | 8 | [Cash Flow Narrative](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%203%20NARRATIVE%20LAYER/Reference/SKILL%208%20CASH%20FLOW%20NARRATIVE.md) | Explains cash movements in plain English across operating, investing, and financing activities |
 
-### Tier 4 — Workbook Augmentation
-Skills that add new sheets and structure to existing workbooks.
+### Tier 4 — Other Skills
+Advanced skills for specialized analysis, reporting, and scenario planning across finance, HR, and operational data.
 
 | # | Skill | Description |
 |---|-------|-------------|
-| 9 | [Assumption Register Builder](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20WORKBOOK%20AUGMENTATION/Reference/SKILL%209%20ASSUMPTION%20REGISTER%20BUILDER.md) | Scans a workbook and extracts all hardcoded assumptions into a structured register |
-| 10 | [Anomaly Detection](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20WORKBOOK%20AUGMENTATION/Reference/SKILL%2010%20ANOMALY%20DETECTION%20SKILL.md) | Adds automated PASS/FAIL validation checks to any workbook |
-| 11 | [Model Documentation Generator](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20WORKBOOK%20AUGMENTATION/Reference/SKILL%2011%20MODEL%20DOCUMENTATION%20GENERATOR.md) | Auto-generates an Instructions sheet covering model structure and usage |
-| 12 | [Variance Analysis Reporter](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20WORKBOOK%20AUGMENTATION/Reference/SKILL%2012%20VARIANCE%20ANALYSIS%20REPORTER.md) | Builds a structured sheet comparing actuals to budget, forecast, or prior period |
-| 13 | [KPI Dashboard Formatter](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20WORKBOOK%20AUGMENTATION/Reference/SKILL%2013%20KPI%20DASHBOARD%20FORMATTER.md) | Builds a one-page executive dashboard with tiles and traffic light indicators |
-| 14 | [Change Log and Audit Trail](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20WORKBOOK%20AUGMENTATION/Reference/SKILL%2014%20CHANGE%20LOG%20AND%20AUDIT%20TRAIL.md) | Creates structured change tracking sheets (Change Log and Claude Log) |
-| 15 | [Meeting Prep Pack](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20WORKBOOK%20AUGMENTATION/Reference/SKILL%2015%20MEETING%20PREP%20PACK.md) | Generates a meeting preparation pack from workbook data |
+| 9 | [Assumption Register Builder](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20OTHER%20SKILLS/Reference/SKILL%209%20ASSUMPTION%20REGISTER%20BUILDER.md) | Scans a workbook and extracts all hardcoded assumptions into a structured register |
+| 10 | [Anomaly Detection](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20OTHER%20SKILLS/Reference/SKILL%2010%20ANOMALY%20DETECTION%20SKILL.md) | Adds automated PASS/FAIL validation checks to any workbook |
+| 11 | [Model Documentation Generator](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20OTHER%20SKILLS/Reference/SKILL%2011%20MODEL%20DOCUMENTATION%20GENERATOR.md) | Auto-generates an Instructions sheet covering model structure and usage |
+| 12 | [Variance Analysis Reporter](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20OTHER%20SKILLS/Reference/SKILL%2012%20VARIANCE%20ANALYSIS%20REPORTER.md) | Builds a structured sheet comparing actuals to budget, forecast, or prior period |
+| 13 | [KPI Dashboard Formatter](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20OTHER%20SKILLS/Reference/SKILL%2013%20KPI%20DASHBOARD%20FORMATTER.md) | Builds a one-page executive dashboard with tiles and traffic light indicators |
+| 14 | [Change Log and Audit Trail](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20OTHER%20SKILLS/Reference/SKILL%2014%20CHANGE%20LOG%20AND%20AUDIT%20TRAIL.md) | Creates structured change tracking sheets (Change Log and Claude Log) |
+| 15 | [Meeting Prep Pack](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20OTHER%20SKILLS/Reference/SKILL%2015%20MEETING%20PREP%20PACK.md) | Generates a meeting preparation pack from workbook data |
+| 16 | [Weekly Cash Flow Scenario Analysis](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20OTHER%20SKILLS/Reference/SKILL%2016%20WEEKLY%20CASH%20FLOW%20SCENARIO%20BUILDER.md) | Analyses EXL Cloud Weekly Cash Flow models and populates Base/Best/Worst scenario overlays grounded in actual performance data |
+| 17 | [Human Capital Report Commentary](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20OTHER%20SKILLS/Reference/SKILL%2017%20HUMAN%20CAPITAL%20REPORT%20COMMENTARY.md) | Builds a formula-driven Human Capital Analysis executive summary from EXL Cloud payroll data |
+| 18 | [Invoice & Bill Pull Analysis](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20OTHER%20SKILLS/Reference/SKILL%2018%20INVOICE%20BILL%20PULL%20ANALYSIS.md) | Builds a comprehensive 4-sheet analysis suite from any Xero-sourced Invoice & Credit Note data pull workbook |
+| 19 | [Performance Report Dashboard Commentary](https://github.com/kerrykolo/exl-cloud-ai-skills/blob/main/EXL%20Cloud%20Skill/TIER%204%20OTHER%20SKILLS/Reference/SKILL%2019%20PERFORMANCE%20REPORT%20COMMENTARY.md) | Reads P&L and summary data and writes CF4-level business analysis commentary into dashboard text boxes |
 
 ---
 
